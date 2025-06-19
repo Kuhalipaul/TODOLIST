@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 
 // Type for a single task
@@ -66,22 +66,22 @@ const Page = () => {
     localStorage.setItem("tasks", JSON.stringify(mainTask));
   }, [mainTask]);
 
-  const submitHandler = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (!task.trim() || !description.trim()) return;
+  // const submitHandler = (event: FormEvent<HTMLFormElement>) => {
+  //   event.preventDefault();
+  //   if (!task.trim() || !description.trim()) return;
 
-    setMainTask((prev) => [
-      ...prev,
-      {
-        task,
-        description,
-        isDone: false,
-        isEditing: false,
-      },
-    ]);
-    setTask("");
-    setDescription("");
-  };
+  //   setMainTask((prev) => [
+  //     ...prev,
+  //     {
+  //       task,
+  //       description,
+  //       isDone: false,
+  //       isEditing: false,
+  //     },
+  //   ]);
+  //   setTask("");
+  //   setDescription("");
+  // };
 
   const deleteHandler = (index: number) => {
     const copyTask = [...mainTask];
