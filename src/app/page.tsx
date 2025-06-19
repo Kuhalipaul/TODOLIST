@@ -153,7 +153,7 @@ const Page = () => {
             ${!darkMode ? "bg-purple-500 hover:bg-purple-600" : "bg-transparent hover:bg-gray-700"}`}
         >
           <img
-            src={darkMode ? "./light.png" : "./vector_todo.png"}
+            src={darkMode ? "./light.png" : "./Vector_todo.png"}
             alt="Toggle Theme"
             className="h-5 w-5 opacity-70"
           />
