@@ -146,19 +146,19 @@ const Page = () => {
               <div className="flex gap-2">
                 <button
                   onClick={() => toggleDone(index)}
-                  className="bg-green-300 p-2 rounded"
+                  className="bg-green-300 p-2 rounded border-1"
                 >
                   {taskItem.isDone ? "Undone" : "Done"}
                 </button>
                 <button
                   onClick={() => toggleEdit(index)}
-                  className="bg-blue-300 p-2 rounded"
+                  className="bg-blue-300 p-2 rounded border-1"
                 >
                   {taskItem.isEditing ? "Save" : "Edit"}
                 </button>
                 <button
                   onClick={() => deleteHandler(index)}
-                  className="bg-amber-300 p-2 rounded"
+                  className="bg-amber-300 p-2 rounded border-1"
                 >
                   Delete
                 </button>
