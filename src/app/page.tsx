@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 
-
 // Type for a single task
 type TaskType = {
   task: string;
@@ -66,23 +65,6 @@ const Page = () => {
     localStorage.setItem("tasks", JSON.stringify(mainTask));
   }, [mainTask]);
 
-  // const submitHandler = (event: FormEvent<HTMLFormElement>) => {
-  //   event.preventDefault();
-  //   if (!task.trim() || !description.trim()) return;
-
-  //   setMainTask((prev) => [
-  //     ...prev,
-  //     {
-  //       task,
-  //       description,
-  //       isDone: false,
-  //       isEditing: false,
-  //     },
-  //   ]);
-  //   setTask("");
-  //   setDescription("");
-  // };
-
   const deleteHandler = (index: number) => {
     const copyTask = [...mainTask];
     copyTask.splice(index, 1);
@@ -133,6 +115,7 @@ const Page = () => {
               alt="Search Icon"
               className="h-5 w-5 opacity-70"
             />
+
           </span>
 
         </div>
@@ -187,14 +170,14 @@ const Page = () => {
               <input
                 type="text"
                 placeholder="Input your note..."
-                className="w-full border border-purple-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400 mb-4"
+                className="w-full border border-purple-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400 mb-4 text-black bg-white"
                 value={task}
                 onChange={(e) => setTask(e.target.value)}
               />
               <input
                 type="text"
                 placeholder="Enter description..."
-                className="w-full border border-purple-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400 mb-6"
+                className="w-full border border-purple-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400 mb-6 text-black bg-white"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               />
@@ -227,7 +210,7 @@ const Page = () => {
               alt="Search Icon"
               className="h-52 w-52 mb-2"
             />
-            <p className="text-gray-800">Empty..</p>
+            <p className={`text-center ${darkMode ? "text-white" : "text-gray-800"}`}>Empty..</p>
           </div>
         ) : (
           <ul className="space-y-4 max-w-xl mx-auto">
@@ -251,7 +234,7 @@ const Page = () => {
                         onChange={(e) =>
                           handleEditChange(index, "task", e.target.value)
                         }
-                        className="text-sm border-b border-purple-300 mb-1 focus:outline-none"
+                        className="text-sm  text-gray-800 border-b border-purple-300 mb-1 focus:outline-none"
                       />
                       <input
                         type="text"
