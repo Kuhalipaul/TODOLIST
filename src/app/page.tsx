@@ -29,7 +29,6 @@ const Page = () => {
     localStorage.setItem("darkMode", darkMode.toString());
   }, [darkMode]);
 
-
   //filter
   const filteredTasks = mainTask.filter((item) => {
     const matchesSearch =
@@ -40,7 +39,6 @@ const Page = () => {
     if (filterStatus === "Incomplete") return matchesSearch && !item.isDone;
     return matchesSearch; // All
   });
-
 
   //add task 
   useEffect(() => {
@@ -83,6 +81,7 @@ const Page = () => {
     setMainTask(copy);
   };
 
+  //edit
   const handleEditChange = (
     index: number,
     field: "task" | "description",
@@ -115,9 +114,7 @@ const Page = () => {
               alt="Search Icon"
               className="h-5 w-5 opacity-70"
             />
-
           </span>
-
         </div>
 
         {/* Optional filters like ALL or sort buttons */}
